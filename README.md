@@ -42,3 +42,7 @@ The Sample App will be available under `http://localhost:3000`
 ## Stop the Sample App
 
 1.  In the terminal window press `CTRL+C` to stop the sample app.
+
+
+
+更新为新版 babel 编译器，并格式化代码
