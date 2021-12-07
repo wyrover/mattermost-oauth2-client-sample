@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node dist/bin/www.js",
-    "babel-node": "babel-node src/bin/www.js",
-    "build": "rimraf dist && babel src --copy-files --out-dir dist"
+    "dev": "nodemon --exec babel-node src/bin/www.js",   
+    "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix ./src",
+    "build": "yarn run lint:fix && rimraf dist && babel src --copy-files --out-dir dist"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -29,7 +30,17 @@
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
     "babel-eslint": "^10.1.0", 
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",   
+    "cross-env": "^7.0.2",
+    "eslint": "^7.6.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4"
   },
   "description": "Sample OAuth client app for Mattermost OAuth 2.0 provider",
   "repository": "git@github.com:enahum/mattermost-oauth2-client-sample.git",
